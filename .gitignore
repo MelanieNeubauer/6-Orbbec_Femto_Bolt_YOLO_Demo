@@ -2,3 +2,4 @@ pyorbbecsdk/
 __pycache__/
 .venv/
 dataset/
+stubs/
