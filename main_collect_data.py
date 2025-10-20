@@ -118,8 +118,8 @@ class RGBDCollectorApp:
                     left_line = int(image_crop_left * scale_x)
                     right_line = self.windows_width - int(image_crop_right * scale_x)
 
-                    cv2.line(preview, (left_line, 0), (left_line, self.windows_height), (0, 255, 0), 2)
-                    cv2.line(preview, (right_line, 0), (right_line, self.windows_height), (0, 255, 0), 2)
+                    cv2.line(preview, (left_line, 0), (left_line, self.windows_height), (255, 0, 0), 5)
+                    cv2.line(preview, (right_line, 0), (right_line, self.windows_height), (255, 0, 0), 5)
 
                     
                     img = Image.fromarray(cv2.cvtColor(preview, cv2.COLOR_BGR2RGB)) # Convert BGR to RGB for PIL
