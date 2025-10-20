@@ -113,6 +113,15 @@ class RGBDCollectorApp:
                 if color_frame is not None and depth_frame is not None:
                     rgb = frame_to_bgr_image(color_frame) # Convert RGB to BGR for OpenCV
                     preview = cv2.resize(rgb, (self.windows_width, self.windows_height)) # Resize for display
+                    
+                    scale_x = self.windows_width / rgb.shape[1]
+                    left_line = int(image_crop_left * scale_x)
+                    right_line = self.windows_width - int(image_crop_right * scale_x)
+
+                    cv2.line(preview, (left_line, 0), (left_line, self.windows_height), (0, 255, 0), 2)
+                    cv2.line(preview, (right_line, 0), (right_line, self.windows_height), (0, 255, 0), 2)
+
+                    
                     img = Image.fromarray(cv2.cvtColor(preview, cv2.COLOR_BGR2RGB)) # Convert BGR to RGB for PIL
                     imgtk = ImageTk.PhotoImage(image=img)
                     self.video_label.imgtk = imgtk
