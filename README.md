@@ -1,4 +1,4 @@
-# RGB-D Data Collector with Orbbec Femto Bolt Camera
+# RGB-D Data Collector with Orbbec Femto Bolt Camera and YOLO connection
 
 ## About
 
