@@ -1,7 +1,6 @@
-# RGB-D Data Collector with Orbbec Femto Bolt Camera and YOLO connection
+# Orbbec Femto Bolt Camera with live YOLO connection and Data Collection Setup
 
 ## About
-
 This GUI-based tool allows you to capture synchronized RGB, depth, and segmentation mask images from an Orbbec Femto Bolt camera. It also automatically generates annotations in YOLO format, stores point clouds, and logs camera intrinsics and scene metadata.
 
 ### Camera Specifications 
