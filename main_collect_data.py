@@ -11,6 +11,9 @@ from annotation_writer import AnnotationWriter
 from utils import frame_to_bgr_image
 from tkinter import ttk
 
+image_crop_left = 250
+image_crop_right = 520
+
 # Crops the input image to a square region centered in the image, extra_crop pixels are removed from each side.
 def crop_manual(img, top=0, bottom=0, left=0, right=0):
     h, w = img.shape[:2]
@@ -137,8 +140,8 @@ class RGBDCollectorApp:
 
         # === Crop both to center square ===
         # === Apply crop to all sides ===
-        rgb, crop_x, crop_y = crop_manual(rgb, top=0, bottom=0, left=250, right=520)
-        depth, _, _ = crop_manual(depth, top=0, bottom=0, left=250, right=520)
+        rgb, crop_x, crop_y = crop_manual(rgb, top=0, bottom=0, left=image_crop_left, right=image_crop_right)
+        depth, _, _ = crop_manual(depth, top=0, bottom=0, left=image_crop_left, right=image_crop_right)
 
         # === Get original intrinsics ===
         intrinsics = self.cam.get_intrinsics() # Recalculate intrinsics based on the cropped image
