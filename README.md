@@ -10,7 +10,7 @@ Orbbec Femto Bolt
 ### Folder structure
 
 ```
-├── main.py                  # Entry point: GUI app for capturing & labeling
+├── main_basic.py                  # Entry point: GUI app for capturing & labeling
 ├── camera_interface.py      # RealSense camera setup and frame retrieval
 ├── segmentation_helper.py   # Depth segmentation + plane removal
 ├── annotation_writer.py     # YOLO-style annotation writer
@@ -62,44 +62,16 @@ Orbbec Femto Bolt
     pybind11-stubgen pyorbbecsdk
     ```
 
-2. Add the files of this git repository
-
-3. Install the requirements
+2. Install the requirements
     ```
-    pip install -r requirements.txt
     cd ..
+    pip install -r requirements.txt
     ```
 
-4. Run the main.py file
+3. Run the main.py file
     ````bash
-    python3 main.py
+    python3 main_yolo.py
     ````
-
-5. Controls (using kevboard or gui)
-    1. Enter - Capture current RGB-D frame
-    2. S - Save captured frame and label
-    3. R - Retake / discard frame
-    4. P - Preview 3D point cloud
-    5. Q - Quit the application
-    6. Dropdown to select the class (0 - Copper, 1 - Steel)
-
-6. Captured data is stored in a dataset/ folder
-    ```
-    dataset/
-    ├── images/         # RGB images (img0000.png, ...)
-    ├── depth/          # Normalized color depth images (.png)
-    ├── labels/         # YOLO-format annotations (.txt) <class_label> x1 y1 x2 y2 x3 y3 ... xn yn
-    ├── pointcloud/     # 3D point clouds (.ply)
-    ├── info/           # Per-frame metadata logs like intrinsics and depth info (.txt)
-    ```
-## Features
-
-- Synchronized RGB + Depth capture
-- Depth-based segmentation with plane removal using RANSAC
-- YOLO-style annotation writer
-- Tkinter GUI with interactive controls
-- Live preview and contour overlay
-- Saves metadata, point cloud, and intrinsics per frame
 
 
 ## Run Code after Closing Window
