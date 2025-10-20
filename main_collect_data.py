@@ -28,9 +28,9 @@ class RGBDCollectorApp:
         self.root = root
         self.root.title("RGB-D Data Collector (Orbbec)")
         self.root.focus_force()
-        self.windows_width = 1920
-        self.windows_height = 1080
-        self.size_scale = 2.5 # Display size for 3 video feeds
+        self.windows_width = 1536
+        self.windows_height = 864
+        self.size_scale = 2 # Display size for 3 video feeds
 
         self.cam = CameraInterface() # Initialize Orbbec camera interface
         self.cam.setup_streams() # Sets up the RGB-D streams (color + depth)
